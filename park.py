@@ -1,5 +1,5 @@
 import streamlit as st
-import google.generativeai as genai
+import google.genai as genai
 import json
 import time
 from datetime import datetime
@@ -174,3 +174,4 @@ with tab3:
 st.divider()
 
 st.caption("System Operational • AI Detection Enabled")
+
