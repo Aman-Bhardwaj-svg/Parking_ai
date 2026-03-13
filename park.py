@@ -1,5 +1,6 @@
 import streamlit as st
-try: import google.generativeai as genai
+try:
+    import google.generativeai as genai
     except: st.error("Gemini library not installed")
 import json
 import time
@@ -175,6 +176,7 @@ with tab3:
 st.divider()
 
 st.caption("System Operational • AI Detection Enabled")
+
 
 
 
