@@ -15,12 +15,13 @@ HISTORY_FILE = "parking_history.json"
 
 # Initialize Gemini (Ensure GEMINI_API_KEY is in your environment variables)
 # Or replace with your actual key for local testing: genai.configure(api_key="YOUR_KEY")
-api_key = os.environ.get("GEMINI_API_KEY")
+api_key = st.secrets.get("GEMINI_API_KEY")
 if api_key:
     genai.configure(api_key=api_key)
-    model = genai.GenerativeModel('gemini-1.5-flash')
+    model = genai.GenerativeModel("gemini-1.5-flash")
 else:
-    st.error("Gemini API Key not found. Please set the GEMINI_API_KEY environment variable.")
+    st.warning("Gemini API key not found. AI detection disabled.")
+    model = None
 
 # --- DATA PERSISTENCE ---
 def load_json(filename):
@@ -171,4 +172,5 @@ with tab3:
         st.dataframe(history_df[['plate', 'entry_time', 'exit_time', 'duration']], use_container_width=True)
 
 st.divider()
+
 st.caption("System Operational • AI Detection Enabled")
