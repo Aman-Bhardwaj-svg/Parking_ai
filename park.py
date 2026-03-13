@@ -1,7 +1,7 @@
 import streamlit as st
 try:
 import google.generativeai as genai
-except: st.error("Gemini library not installed")
+except ImportError: st.error("Gemini library not installed")
 import json
 import time
 from datetime import datetime
@@ -176,6 +176,7 @@ with tab3:
 st.divider()
 
 st.caption("System Operational • AI Detection Enabled")
+
 
 
 
