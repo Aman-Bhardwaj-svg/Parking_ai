@@ -174,11 +174,3 @@ with tab3:
 st.divider()
 
 st.caption("System Operational • AI Detection Enabled")
-
-
-
-
-
-
-
-
