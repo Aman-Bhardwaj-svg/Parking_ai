@@ -16,12 +16,7 @@ HISTORY_FILE = "parking_history.json"
 # Initialize Gemini (Ensure GEMINI_API_KEY is in your environment variables)
 # Or replace with your actual key for local testing: genai.configure(api_key="YOUR_KEY")
 api_key = st.secrets.get("GEMINI_API_KEY")
-if api_key:
-    genai.configure(api_key=api_key)
-    model = genai.GenerativeModel("gemini-1.5-flash")
-else:
-    st.warning("Gemini API key not found. AI detection disabled.")
-    model = None
+client = genai.Client(api_key==api_key)
 
 # --- DATA PERSISTENCE ---
 def load_json(filename):
@@ -174,4 +169,5 @@ with tab3:
 st.divider()
 
 st.caption("System Operational • AI Detection Enabled")
+
 
