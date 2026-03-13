@@ -153,7 +153,7 @@ with tab2:
             elapsed = time.time() - v['entry_time']
             with st.expander(f"🚗 {v['plate']}"):
                 st.write(f"**Entry Time:** {datetime.fromtimestamp(v['entry_time']).strftime('%I:%M %p')}")
-                st.write(f"**Duration:** {formatDuration(elapsed)}")
+                st.write(f"**Duration:** {format_duration(elapsed)}")
 
 with tab3:
     st.subheader("Parking History")
@@ -174,3 +174,4 @@ with tab3:
 st.divider()
 
 st.caption("System Operational • AI Detection Enabled")
+
